@@ -1,0 +1,3 @@
+/home/kiniap/Courses/SelfDriving/SensorFusion_Localization_Control/ModelPredictiveControlForACar/build/CMakeFiles/edit_cache.dir
+/home/kiniap/Courses/SelfDriving/SensorFusion_Localization_Control/ModelPredictiveControlForACar/build/CMakeFiles/rebuild_cache.dir
+/home/kiniap/Courses/SelfDriving/SensorFusion_Localization_Control/ModelPredictiveControlForACar/build/CMakeFiles/mpc.dir
