@@ -22,7 +22,7 @@ double dt = 0.1;
 const double Lf = 2.67;
 
 // reference velocity
-const double v_ref = 20; //60mph = 26.8m/s
+const double v_ref = 22.352; //50mph = 22.352m/s
 
 // The solver takes all the state variables and actuator
 // variables in a singular vector. Establish end points for all variables/
@@ -52,20 +52,20 @@ class FG_eval {
 
     // Reference State Cost
     for(size_t i=0; i < N; ++i){
-      fg[0]+= 200*CppAD::pow(vars[cte_start + i], 2);
-      fg[0]+= 100*CppAD::pow(vars[epsi_start + i], 2);
+      fg[0]+= 400*CppAD::pow(vars[cte_start + i], 2);
+      fg[0]+= 200*CppAD::pow(vars[epsi_start + i], 2);
       fg[0]+= 10*CppAD::pow(vars[v_start + i] - v_ref, 2);
     }
 
     // Minimize the use of actuations
     for (size_t i=0; i< N-1; ++i){
-      fg[0]+= 60000*CppAD::pow(vars[delta_start + i],2);
+      fg[0]+= 50000*CppAD::pow(vars[delta_start + i],2);
       fg[0]+= 50*CppAD::pow(vars[a_start + i], 2);
     }
 
     // Minimize the value gap between sequential actuations
     for(size_t i=0; i <N-2; ++i){
-      fg[0]+= 5000*CppAD::pow(vars[delta_start+i+1] - vars[delta_start + i],2);
+      fg[0]+= 500*CppAD::pow(vars[delta_start+i+1] - vars[delta_start + i],2);
       fg[0]+= 50*CppAD::pow(vars[a_start +i+1] - vars[a_start + 1], 2);
     }
 

@@ -189,7 +189,7 @@ int main() {
           /*
            * Account for latency by using the kinematic model to predict the state of the vehicle after latency period
            */
-           const double latency = 0.1; // latency = 100ms
+           const double latency = 0.2; // latency = 200ms
            const double Lf = 2.67;
            const double px_latent = v*latency;
            const double py_latent = 0;
@@ -238,8 +238,8 @@ int main() {
 
           //.. add (x,y) points to list here, points are in reference to the vehicle's coordinate system
           // the points in the simulator are connected by a Yellow line
-          double delta_x = 2;
-          unsigned nPoints = 20;
+          double delta_x = 2.5;
+          unsigned nPoints = 10;
           for(unsigned i=1; i < nPoints; ++i){
             const double x = delta_x*i;
             next_x_vals.push_back(x);
